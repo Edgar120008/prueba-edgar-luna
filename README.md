@@ -1,4 +1,4 @@
-¡Por supuesto! Aquí tienes un ejemplo de un archivo `README.md` en formato Markdown que explica cómo ejecutar el código desde el contenedor Docker y cómo funcionan los endpoints:
+Bienvenido a mi prueba tecnica, te mostrare como poder ejecutar mi proyecto y como poder probarlo:
 
 ```markdown
 # Proyecto API de Películas con NestJS
@@ -19,27 +19,11 @@ Antes de comenzar, asegúrate de tener Docker y Docker Compose instalados en tu 
 Clona este repositorio en tu máquina local.
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/Edgar120008/prueba-edgar-luna.git
+cd prueba-edgar-luna
 ```
 
-### 2. Configurar las Variables de Entorno
-
-Asegúrate de tener un archivo `.env` en la raíz de tu proyecto con las siguientes variables de entorno:
-
-```plaintext
-AWS_REGION=tu-aws-region
-AWS_ACCESS_KEY_ID=tu-aws-access-key-id
-AWS_SECRET_ACCESS_KEY=tu-aws-secret-access-key
-AWS_BUCKET_NAME=tu-nombre-del-bucket
-DB_HOST=mysqldb
-DB_PORT=3306
-DB_USER=user
-DB_PASSWORD=RooT1234
-DB_NAME=moviesDB
-```
-
-### 3. Construir y Ejecutar los Contenedores
+### 2. Construir y Ejecutar los Contenedores
 
 Construye y ejecuta los contenedores usando Docker Compose.
 
@@ -49,7 +33,7 @@ docker-compose up --build
 
 Esto levantará tanto la aplicación NestJS como la base de datos MySQL en contenedores Docker.
 
-### 4. Acceder a la Aplicación
+### 3. Acceder a la Aplicación
 
 La API estará disponible en `http://localhost:3000`.
 
@@ -74,7 +58,7 @@ POST /movies
 ### Buscar Películas
 
 ```http
-GET /movies?name=The%20Dark%20Knight&category=3
+GET /movies?name=The Dark Knight&category=3
 ```
 
 ### Obtener Detalles de una Película
@@ -96,7 +80,5 @@ POST /movies/:id/upload
 
 ---
 
-¡Gracias por usar este proyecto! Si tienes alguna pregunta o problema, no dudes en abrir un `issue` en el repositorio.
+¡Gracias por revisar esta prueba! Si tienes alguna pregunta o problema, no dudes en mandarme un mensaje y resolvere tus dudas.
 ```
-
-Con este archivo `README.md`, los usuarios podrán configurar y ejecutar tu proyecto NestJS dentro de contenedores Docker de manera sencilla, además de entender cómo funcionan los principales endpoints de la API. ¡Espero que te sea útil! 😊📦🚀
