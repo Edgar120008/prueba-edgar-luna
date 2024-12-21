@@ -91,4 +91,3 @@ POST /movies/:id/upload
 ---
 
 ¡Gracias por revisar esta prueba! Si tienes alguna pregunta o problema, no dudes en mandarme un mensaje y resolvere tus dudas.
-```
