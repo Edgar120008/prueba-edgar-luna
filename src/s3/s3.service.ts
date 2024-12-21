@@ -9,17 +9,17 @@ export class S3Service {
 
   constructor(private configService: ConfigService) {
     this.s3Client = new S3Client({
-      region: this.configService.get<string>('AWS_REGION'),
+      region: 'us-east-2',
       credentials: {
-        accessKeyId: this.configService.get<string>('AWS_ACCESS_KEY_ID'),
-        secretAccessKey: this.configService.get<string>('AWS_SECRET_ACCESS_KEY'),
+        accessKeyId: 'AKIAW5WU46SKVGYP6P6X',
+        secretAccessKey: '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',
       },
     });
   }
 
   async uploadFile(file: Express.Multer.File): Promise<string> {
     const { originalname, buffer } = file;
-    const bucketName = this.configService.get<string>('AWS_BUCKET_NAME');
+    const bucketName = 'pruebaedgarluna';
 
     const params = {
       Bucket: bucketName,

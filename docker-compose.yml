@@ -10,6 +10,8 @@ services:
       MYSQL_PASSWORD: RooT1234
     ports:
       - "3307:3306"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
 
   app:
     build: .

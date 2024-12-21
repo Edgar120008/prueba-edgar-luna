@@ -9,7 +9,11 @@ async function bootstrap() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true, 
+    forbidNonWhitelisted: true, 
+    validationError: { target: false, value: false }
+  }));
 
   await app.listen(3000);
 }
