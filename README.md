@@ -1,6 +1,5 @@
 Bienvenido a mi prueba tecnica, te mostrare como poder ejecutar mi proyecto y como poder probarlo:
 
-```markdown
 # Proyecto API de Películas con NestJS
 
 Este proyecto es una API desarrollada con NestJS para gestionar películas y categorías, ejecutándose dentro de un contenedor Docker.
