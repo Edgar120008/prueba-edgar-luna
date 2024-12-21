@@ -23,7 +23,24 @@ git clone https://github.com/Edgar120008/prueba-edgar-luna.git
 cd prueba-edgar-luna
 ```
 
-### 2. Construir y Ejecutar los Contenedores
+### 2. Configurar las Variables de Entorno
+
+Asegúrate de tener un archivo `.env` en la raíz de tu proyecto con las siguientes variables de entorno:
+
+```plaintext
+AWS_REGION=tu-aws-region
+AWS_ACCESS_KEY_ID=tu-aws-access-key-id
+AWS_SECRET_ACCESS_KEY=tu-aws-secret-access-key
+AWS_BUCKET_NAME=tu-nombre-del-bucket
+
+
+```bash
+docker-compose up --build
+```
+
+Esto levantará tanto la aplicación NestJS como la base de datos MySQL en contenedores Docker.
+
+### 3. Construir y Ejecutar los Contenedores
 
 Construye y ejecuta los contenedores usando Docker Compose.
 
@@ -33,7 +50,7 @@ docker-compose up --build
 
 Esto levantará tanto la aplicación NestJS como la base de datos MySQL en contenedores Docker.
 
-### 3. Acceder a la Aplicación
+### 4. Acceder a la Aplicación
 
 La API estará disponible en `http://localhost:3000`.
 

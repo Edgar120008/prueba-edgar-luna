@@ -9,17 +9,17 @@ export class S3Service {
 
   constructor(private configService: ConfigService) {
     this.s3Client = new S3Client({
-      region: 'us-east-2',
+      region: process.env.AWS_REGION,
       credentials: {
-        accessKeyId: 'AKIAW5WU46SKVGYP6P6X',
-        secretAccessKey: '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',
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
       },
     });
   }
 
   async uploadFile(file: Express.Multer.File): Promise<string> {
     const { originalname, buffer } = file;
-    const bucketName = 'pruebaedgarluna';
+    const bucketName = process.env.AWS_BUCKET_NAME;
 
     const params = {
       Bucket: bucketName,
