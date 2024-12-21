@@ -32,13 +32,7 @@ AWS_REGION=tu-aws-region
 AWS_ACCESS_KEY_ID=tu-aws-access-key-id
 AWS_SECRET_ACCESS_KEY=tu-aws-secret-access-key
 AWS_BUCKET_NAME=tu-nombre-del-bucket
-
-
-```bash
-docker-compose up --build
 ```
-
-Esto levantará tanto la aplicación NestJS como la base de datos MySQL en contenedores Docker.
 
 ### 3. Construir y Ejecutar los Contenedores
 
