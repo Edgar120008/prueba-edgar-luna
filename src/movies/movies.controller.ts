@@ -6,33 +6,31 @@ import { S3Service } from '../s3/s3.service';
 
 @Controller('movies')
 export class MoviesController {
-    constructor(
-        private readonly moviesService: MoviesService,
-        private readonly s3Service: S3Service) {}
+  constructor(
+    private readonly moviesService: MoviesService,
+    private readonly s3Service: S3Service,
+  ) {}
 
-    @Post()
-    createMovie(@Body() createMovieDto: CreateMovieDto) {
-        return this.moviesService.create(createMovieDto);
-    }
+  @Post()
+  createMovie(@Body() createMovieDto: CreateMovieDto) {
+    return this.moviesService.create(createMovieDto);
+  }
 
-    @Get()
-    searchMovies(@Query('name') name: string, @Query('category') category: number) {
-        return this.moviesService.search(name, category);
-    }
+  @Get()
+  searchMovies(@Query('name') name: string, @Query('category') category: number) {
+    console.log(name, category);
+    return this.moviesService.search(name, category);
+  }
 
-    @Get(':id')
-    getMovie(@Param('id') id: number) {
-        return this.moviesService.findById(id);
-    }
-    
-    @Post(':id/upload')
-    @UseInterceptors(FileInterceptor('file'))
-    async uploadPoster(@Param('id') id: number, @UploadedFile() file: Express.Multer.File) {
-        const posterUrl = await this.s3Service.uploadFile(file);
-        return this.moviesService.updatePosterUrl(id, posterUrl);
-    }
+  @Get(':id')
+  getMovie(@Param('id') id: number) {
+    return this.moviesService.findById(id);
+  }
+
+  @Post(':id/upload')
+  @UseInterceptors(FileInterceptor('file'))
+  async uploadPoster(@Param('id') id: number, @UploadedFile() file: Express.Multer.File) {
+    const posterUrl = await this.s3Service.uploadFile(file);
+    return this.moviesService.updatePosterUrl(id, posterUrl);
+  }
 }
-
-
-
-
